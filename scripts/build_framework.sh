@@ -6,7 +6,7 @@ SCHEME="AnalyticsConnector"
 FRAMEWORK="AnalyticsConnector"
 BUILD_DIR="./.build/artifacts"
 OUTPUT_PATH="$BUILD_DIR/$FRAMEWORK.xcframework"
-PLATFORMS=("iOS" "iOS Simulator" "macOS" "macOS Cataylst" "watchOS" "watchOS Simulator" "tvOS" "tvOS Simulator")
+PLATFORMS=("iOS" "iOS Simulator" "macOS" "macOS Cataylst" "watchOS" "watchOS Simulator" "tvOS" "tvOS Simulator" "visionOS" "visionOS Simulator")
 
 build_framework_with_configuration_and_name() {
     CONFIGURATION=${1}
