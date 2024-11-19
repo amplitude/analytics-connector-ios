@@ -30,9 +30,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set Xcode 14.3.1
+      - name: Set Xcode 15.4
         run: |
-          sudo xcode-select -switch /Applications/Xcode_14.3.1.app
+          sudo xcode-select -switch /Applications/Xcode_15.4.app
 
       - name: iOS Build 
         run: |
@@ -100,6 +100,11 @@ jobs:
             -sdk xrsimulator \
             -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
             test
+      
+      - name: Setup Cocoapods
+        uses: maxim-lobanov/setup-cocoapods@v1.4.0
+        with:
+          cocoapods-version: latest
 
       - name: Validate Podfile
         run: pod lib lint --allow-warnings
