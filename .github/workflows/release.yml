@@ -104,8 +104,9 @@ jobs:
       - name: Show Installed Simulators
         run: xcrun simctl list
 
-      - name: Install missing Simulators
-        run: xcodebuild -downloadAllPlatforms
+      # remove this step after update the os runner to 15
+      - name: Install visionOS simulator
+        run: xcodebuild -downloadPlatform visionOS
 
       - name: Show Installed Simulators
         run: xcrun simctl list
@@ -116,10 +117,10 @@ jobs:
       - name: Validate Podfile
         run: pod --version
 
-      - name: Setup Cocoapods
-        uses: maxim-lobanov/setup-cocoapods@v1.4.0
-        with:
-          version: latest
+      # - name: Setup Cocoapods
+      #   uses: maxim-lobanov/setup-cocoapods@v1.4.0
+      #   with:
+      #     version: latest
 
       - name: Validate Podfile after reinstall
         run: pod --version
