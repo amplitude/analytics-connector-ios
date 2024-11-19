@@ -13,9 +13,9 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v2
 
-      - name: Set Xcode 14.3.1
+      - name: Set Xcode 15.4
         run: |
-          sudo xcode-select -switch /Applications/Xcode_14.3.1.app
+          sudo xcode-select -switch /Applications/Xcode_15.4.app
 
       - name: iOS Build 
         run: |
@@ -40,6 +40,14 @@ jobs:
             -scheme AnalyticsConnector \
             -sdk appletvsimulator \
             -destination 'platform=tvOS Simulator,name=Apple TV' \
+
+      - name: xrOS Build 
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk xrsimulator \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
 
       - name: iOS Tests
         run: |
@@ -67,3 +75,11 @@ jobs:
             -destination 'platform=tvOS Simulator,name=Apple TV' \
             test
 
+      - name: visionOS Tests
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk xrsimulator \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+            test
