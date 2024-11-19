@@ -41,7 +41,7 @@ jobs:
             -sdk appletvsimulator \
             -destination 'platform=tvOS Simulator,name=Apple TV' \
 
-      - name: xrOS Build 
+      - name: visionOS Build 
         run: |
           xcodebuild \
             -project AnalyticsConnector.xcodeproj \

@@ -34,96 +34,77 @@ jobs:
         run: |
           sudo xcode-select -switch /Applications/Xcode_15.4.app
 
-      # - name: iOS Build 
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk iphonesimulator \
-      #       -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+      - name: iOS Build 
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
 
-      # - name: macOS Build 
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk macosx \
-      #       -destination 'platform=macosx' \
+      - name: macOS Build 
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk macosx \
+            -destination 'platform=macosx' \
 
-      # - name: tvOS Build 
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk appletvsimulator \
-      #       -destination 'platform=tvOS Simulator,name=Apple TV' \
+      - name: tvOS Build 
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk appletvsimulator \
+            -destination 'platform=tvOS Simulator,name=Apple TV' \
 
-      # - name: xrOS Build 
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk xrsimulator \
-      #       -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+      - name: visionOS Build
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk xrsimulator \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
 
-      # - name: iOS Tests
-      #   run: |
-      #     xcodebuild test \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk iphonesimulator \
-      #       -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+      - name: iOS Tests
+        run: |
+          xcodebuild test \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
 
-      # - name: macOS Tests
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk macosx \
-      #       -destination 'platform=macosx' \
-      #       test
+      - name: macOS Tests
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk macosx \
+            -destination 'platform=macosx' \
+            test
 
-      # - name: tvOS Tests
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk appletvsimulator \
-      #       -destination 'platform=tvOS Simulator,name=Apple TV' \
-      #       test
+      - name: tvOS Tests
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk appletvsimulator \
+            -destination 'platform=tvOS Simulator,name=Apple TV' \
+            test
 
-      # - name: visionOS Tests
-      #   run: |
-      #     xcodebuild \
-      #       -project AnalyticsConnector.xcodeproj \
-      #       -scheme AnalyticsConnector \
-      #       -sdk xrsimulator \
-      #       -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
-      #       test
+      - name: visionOS Tests
+        run: |
+          xcodebuild \
+            -project AnalyticsConnector.xcodeproj \
+            -scheme AnalyticsConnector \
+            -sdk xrsimulator \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+            test
 
-      - name: Show Installed Simulators
-        run: xcrun simctl list
-
-      # remove this step after update the os runner to 15
+      # Install missing sdk for pod lint
+      # Remove this step after the runner upgraded to macos-15
       - name: Install visionOS simulator
-        run: xcodebuild -downloadPlatform visionOS
-
-      - name: Show Installed Simulators
-        run: xcrun simctl list
-      
-      - name: Show Installed Simulators
-        run: xcodebuild -showsdks
-      
-      - name: Validate Podfile
-        run: pod --version
-
-      # - name: Setup Cocoapods
-      #   uses: maxim-lobanov/setup-cocoapods@v1.4.0
-      #   with:
-      #     version: latest
-
-      - name: Validate Podfile after reinstall
-        run: pod --version
+        run: xcodebuild -downloadPlatform visionOS -quiet
 
       - name: Validate Podfile
         run: pod lib lint --allow-warnings
