@@ -104,7 +104,7 @@ jobs:
       - name: Setup Cocoapods
         uses: maxim-lobanov/setup-cocoapods@v1.4.0
         with:
-          cocoapods-version: latest
+          version: latest
 
       - name: Validate Podfile
         run: pod lib lint --allow-warnings
