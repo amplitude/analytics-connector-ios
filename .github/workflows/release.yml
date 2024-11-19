@@ -103,6 +103,12 @@ jobs:
 
       - name: Show Installed Simulators
         run: xcrun simctl list
+
+      - name: Install missing Simulators
+        run: sudo xcodebuild -installAdditionalComponents
+
+      - name: Show Installed Simulators
+        run: xcrun simctl list
       
       - name: Validate Podfile
         run: pod --version
