@@ -97,7 +97,9 @@ jobs:
       - name: Update Checksum
         run: |
           CHECKSUM=$(xcrun swift package compute-checksum .build/artifacts/AnalyticsConnector.xcframework.zip) && \
-          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package.swift
+          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package.swift && \
+          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package@swift-5.9.swift
+
 
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
