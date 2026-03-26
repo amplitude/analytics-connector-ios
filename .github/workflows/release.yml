@@ -122,6 +122,11 @@ jobs:
           sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package.swift && \
           sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package@swift-5.9.swift
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
