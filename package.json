@@ -1,4 +1,5 @@
 {
+  "name": "analytics-connector-ios",
   "private": true,
   "dependencies": {
     "lodash": "latest",
