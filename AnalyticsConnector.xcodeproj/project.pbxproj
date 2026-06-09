@@ -261,12 +261,15 @@
 				INFOPLIST_FILE = Sources/AnalyticsConnector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.AnalyticsConnector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -277,7 +280,11 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchos27*]" = 9.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchsimulator27*]" = 9.0;
 			};
 			name = Debug;
 		};
@@ -295,12 +302,15 @@
 				INFOPLIST_FILE = Sources/AnalyticsConnector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.AnalyticsConnector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -310,7 +320,11 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchos27*]" = 9.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchsimulator27*]" = 9.0;
 			};
 			name = Release;
 		};
@@ -323,12 +337,15 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/AnalyticsConnectorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.AnalyticsConnectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
@@ -338,6 +355,8 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,6,7";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 			};
 			name = Debug;
 		};
@@ -350,12 +369,15 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/AnalyticsConnectorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.AnalyticsConnectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
@@ -364,6 +386,8 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,6,7";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 			};
 			name = Release;
 		};
@@ -421,7 +445,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -430,9 +457,13 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchos27*]" = 9.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchsimulator27*]" = 9.0;
 			};
 			name = Debug;
 		};
@@ -484,7 +515,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos27*]" = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphonesimulator27*]" = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx27*]" = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -492,10 +526,14 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvos27*]" = 15.0;
+				"TVOS_DEPLOYMENT_TARGET[sdk=appletvsimulator27*]" = 15.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchos27*]" = 9.0;
+				"WATCHOS_DEPLOYMENT_TARGET[sdk=watchsimulator27*]" = 9.0;
 			};
 			name = Release;
 		};
