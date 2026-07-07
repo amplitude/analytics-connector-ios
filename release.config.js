@@ -65,11 +65,25 @@ module.exports = {
             ],
             "countMatches": true
           },
+          {
+            "files": ["Package@swift-6.4.swift"],
+            "from": "https://github.com/amplitude/analytics-connector-ios/releases/download/v.*/AnalyticsConnector.xcframework.zip",
+            "to": "https://github.com/amplitude/analytics-connector-ios/releases/download/v${nextRelease.version}/AnalyticsConnector.xcframework.zip",
+            "results": [
+              {
+                "file": "Package@swift-6.4.swift",
+                "hasChanged": true,
+                "numMatches": 1,
+                "numReplacements": 1
+              }
+            ],
+            "countMatches": true
+          },
         ]
       }
     ],
     ["@semantic-release/git", {
-      "assets": ["AnalyticsConnector.podspec", "CHANGELOG.md", "Package.swift", "Package@swift-5.9.swift"],
+      "assets": ["AnalyticsConnector.podspec", "CHANGELOG.md", "Package.swift", "Package@swift-5.9.swift", "Package@swift-6.4.swift"],
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }],
     ["@semantic-release/exec", {

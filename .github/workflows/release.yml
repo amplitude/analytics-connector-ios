@@ -120,7 +120,8 @@ jobs:
         run: |
           CHECKSUM=$(xcrun swift package compute-checksum .build/artifacts/AnalyticsConnector.xcframework.zip) && \
           sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package.swift && \
-          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package@swift-5.9.swift
+          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package@swift-5.9.swift && \
+          sed -i '' -E "s/(checksum: \")[^\"]*(\")/\1$CHECKSUM\2/" Package@swift-6.4.swift
 
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
