@@ -17,7 +17,16 @@ jobs:
         run: |
           sudo xcode-select -switch /Applications/Xcode_16.3.app
 
-      - name: iOS Build 
+      - name: Install Apple platform SDKs
+        run: |
+          # Warm up CoreSimulator to avoid "Unable to connect to simulator":
+          # https://github.com/actions/runner-images/issues/12862#issuecomment-3239326872
+          xcrun simctl list > /dev/null
+          sudo xcodebuild -downloadPlatform iOS
+          sudo xcodebuild -downloadPlatform tvOS
+          sudo xcodebuild -downloadPlatform visionOS
+
+      - name: iOS Build
         run: |
           xcodebuild \
             -project AnalyticsConnector.xcodeproj \
