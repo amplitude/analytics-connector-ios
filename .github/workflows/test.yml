@@ -56,7 +56,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk xrsimulator \
-            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+            -destination 'platform=visionOS Simulator,OS=2.4,name=Apple Vision Pro' \
 
       - name: iOS Tests
         run: |
@@ -90,5 +90,5 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk xrsimulator \
-            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+            -destination 'platform=visionOS Simulator,OS=2.4,name=Apple Vision Pro' \
             test
