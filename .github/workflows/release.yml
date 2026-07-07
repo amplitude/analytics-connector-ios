@@ -57,7 +57,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk macosx \
-            -destination 'platform=macosx' \
+            -destination 'platform=macOS' \
 
       - name: tvOS Build 
         run: |
@@ -89,7 +89,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk macosx \
-            -destination 'platform=macosx' \
+            -destination 'platform=macOS' \
             test
 
       - name: tvOS Tests
