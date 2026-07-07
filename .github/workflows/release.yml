@@ -11,7 +11,7 @@ on:
 jobs:
   authorize:
     name: Authorize
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - name: ${{ github.actor }} permission check to do a release
         uses: octokit/request-action@57ec46afcc4c58c813af3afe67e57ced1ea9f165 # v2.0.0
@@ -23,16 +23,16 @@ jobs:
 
   release:
     name: Release
-    runs-on: macos-14
+    runs-on: macos-15
     needs: [authorize]
     steps:
 
       - name: Checkout
-        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - name: Set Xcode 15.4
+      - name: Set Xcode 16.3
         run: |
-          sudo xcode-select -switch /Applications/Xcode_15.4.app
+          sudo xcode-select -switch /Applications/Xcode_16.3.app
 
       - name: iOS Build 
         run: |
@@ -40,7 +40,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+            -destination 'platform=iOS Simulator,name=iPhone 16'
 
       - name: macOS Build 
         run: |
@@ -72,7 +72,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+            -destination 'platform=iOS Simulator,name=iPhone 16'
 
       - name: macOS Tests
         run: |
@@ -101,8 +101,7 @@ jobs:
             -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
             test
 
-      # Install missing sdk for pod lint
-      # Remove this step after the runner upgraded to macos-15
+      # Ensure the visionOS platform is available for pod lint
       - name: Install visionOS simulator
         run: xcodebuild -downloadPlatform visionOS -quiet
 
@@ -126,7 +125,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Semantic Release --dry-run

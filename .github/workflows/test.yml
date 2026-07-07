@@ -8,14 +8,14 @@ on:
 
 jobs:
   test:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
-      - name: Checkout 
-        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - name: Set Xcode 15.4
+      - name: Set Xcode 16.3
         run: |
-          sudo xcode-select -switch /Applications/Xcode_15.4.app
+          sudo xcode-select -switch /Applications/Xcode_16.3.app
 
       - name: iOS Build 
         run: |
@@ -23,7 +23,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.5'
+            -destination 'platform=iOS Simulator,name=iPhone 16'
 
       - name: macOS Build 
         run: |
@@ -55,7 +55,7 @@ jobs:
             -project AnalyticsConnector.xcodeproj \
             -scheme AnalyticsConnector \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+            -destination 'platform=iOS Simulator,name=iPhone 16'
 
       - name: macOS Tests
         run: |
