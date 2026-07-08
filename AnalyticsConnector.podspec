@@ -1,4 +1,4 @@
-analytics_connector_version = "1.3.1" # Version is managed automatically by semantic-release, please dont change it manually
+analytics_connector_version = "1.3.2" # Version is managed automatically by semantic-release, please dont change it manually
 
 Pod::Spec.new do |spec|
 

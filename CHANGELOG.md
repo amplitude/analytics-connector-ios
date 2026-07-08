@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/amplitude/analytics-connector-ios/compare/v1.3.1...v1.3.2) (2026-07-08)
+
+
+### Bug Fixes
+
+* add Package@swift-6.4.swift to avoid deprecated platform constants on Xcode 27 ([#26](https://github.com/amplitude/analytics-connector-ios/issues/26)) ([929587c](https://github.com/amplitude/analytics-connector-ios/commit/929587cd105113780b8f547e48ab2af4f3ec9a42))
+
 ## [1.3.1](https://github.com/amplitude/analytics-connector-ios/compare/v1.3.0...v1.3.1) (2024-11-27)
 
 
