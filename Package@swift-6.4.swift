@@ -40,7 +40,7 @@ let package = Package(
             name: "AnalyticsConnectorTests",
             dependencies: ["AnalyticsConnector"],
             path: "Tests/AnalyticsConnectorTests",
-            exclude: ["Info.plist"],
+            exclude: ["Info.plist", "ObjectiveCTests.m"],
             swiftSettings: [.swiftLanguageMode(.v5)]),
     ]
 )
