@@ -39,6 +39,11 @@ let package = Package(
             name: "AnalyticsConnectorTests",
             dependencies: ["AnalyticsConnector"],
             path: "Tests/AnalyticsConnectorTests",
-            exclude: ["Info.plist"]),
+            exclude: ["Info.plist", "ObjectiveCTests.m"]),
+        .testTarget(
+            name: "AnalyticsConnectorObjCTests",
+            dependencies: ["AnalyticsConnector"],
+            path: "Tests/AnalyticsConnectorTests",
+            sources: ["ObjectiveCTests.m"]),
     ]
 )
