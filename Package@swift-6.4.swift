@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "analytics-connector-ios",
     platforms: [
-        .iOS(.v12),
+        .iOS(.v15),
         .macOS(.v12),
         .tvOS(.v15),
         .watchOS(.v9),
