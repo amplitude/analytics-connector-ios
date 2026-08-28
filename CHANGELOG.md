@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/amplitude/analytics-connector-ios/compare/v1.3.2...v1.3.3) (2026-08-28)
+
+
+### Bug Fixes
+
+* Empty commit to trigger a build ([#33](https://github.com/amplitude/analytics-connector-ios/issues/33)) ([70abceb](https://github.com/amplitude/analytics-connector-ios/commit/70abceb7aeb784efb28b536d24aff875f70e661a))
+
 ## [1.3.2](https://github.com/amplitude/analytics-connector-ios/compare/v1.3.1...v1.3.2) (2026-07-08)
 
 
