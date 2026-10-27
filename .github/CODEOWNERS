@@ -1,0 +1,4 @@
+# DX maintains this connector and its build and release tooling.
+# This includes GitHub Actions workflows, publishing automation, framework build
+# scripts, Swift Package Manager manifests, CocoaPods metadata, and CODEOWNERS.
+* @amplitude/dx
