@@ -38,12 +38,12 @@ build_framework_with_configuration_and_name() {
     done
 
     # then bundle them into an xcframework
-    CREATE_XCFRAMEWORK="xcodebuild -create-xcframework -output '$OUTPUT_PATH'"
+    local -a CREATE_XCFRAMEWORK=(xcodebuild -create-xcframework -output "$OUTPUT_PATH")
     for ARCHIVE in "${ARCHIVES[@]}"
     do
-        CREATE_XCFRAMEWORK="$CREATE_XCFRAMEWORK -archive '$ARCHIVE' -framework '$FRAMEWORK.framework'"
+        CREATE_XCFRAMEWORK+=(-archive "$ARCHIVE" -framework "$FRAMEWORK.framework")
     done
-    eval "$CREATE_XCFRAMEWORK"
+    "${CREATE_XCFRAMEWORK[@]}"
 
     # Fixup - Resolve module/class name conflicts
     for SWIFT_INTERFACE in $(find "$OUTPUT_PATH" -name "*.private.swiftinterface")
