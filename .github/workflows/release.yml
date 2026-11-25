@@ -41,8 +41,6 @@ jobs:
           xcrun simctl list > /dev/null
           sudo xcodebuild -downloadPlatform iOS
           sudo xcodebuild -downloadPlatform tvOS
-          # watchOS runtime is not built directly but pod lib lint validates
-          # every platform the podspec declares, including watchOS
           sudo xcodebuild -downloadPlatform watchOS
           sudo xcodebuild -downloadPlatform visionOS
 
@@ -113,9 +111,6 @@ jobs:
             -destination 'platform=visionOS Simulator,OS=2.4,name=Apple Vision Pro' \
             test
 
-      - name: Validate Podfile
-        run: pod lib lint --allow-warnings
-
       - name: Build xcframework
         run: scripts/build_framework.sh
       
@@ -140,7 +135,6 @@ jobs:
         if: ${{ github.event.inputs.dryRun == 'true'}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
           GIT_AUTHOR_NAME: amplitude-sdk-bot
           GIT_AUTHOR_EMAIL: amplitude-sdk-bot@users.noreply.github.com
           GIT_COMMITTER_NAME: amplitude-sdk-bot
@@ -153,7 +147,6 @@ jobs:
         if: ${{ github.event.inputs.dryRun == 'false'}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
           GIT_AUTHOR_NAME: amplitude-sdk-bot
           GIT_AUTHOR_EMAIL: amplitude-sdk-bot@users.noreply.github.com
           GIT_COMMITTER_NAME: amplitude-sdk-bot
